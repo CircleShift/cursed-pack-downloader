@@ -65,6 +65,6 @@ window.addEventListener("load", _ => {
                 current[0]++;
             }
         }
-        stat.innerText = `Opened ${current[0]} / ${current[1].length} tabs (${current[0] / current[1].length}% complete)`;
+        stat.innerText = `Opened ${current[0]} / ${current[1].length} tabs (${100 * current[0] / current[1].length}% complete)`;
     });
 });
