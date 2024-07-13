@@ -40,6 +40,8 @@ window.addEventListener("load", _ => {
     let manifest = document.getElementById("manifest");
     /** @type {HTMLInputElement} */
     let links = document.getElementById("links");
+    /** @type {HTMLSpanElement} */
+    let stat = document.getElementById("stat");
     
     var current = null;
 
@@ -51,6 +53,7 @@ window.addEventListener("load", _ => {
                     getURLs(link_val),
                     reformFileList(JSON.parse(manifest_val).files),
                 ];
+                stat.innerText = `Loaded ${current[0].length} URLs and ${current[1].length} File IDs`;
             });
         });
     });
@@ -62,5 +65,6 @@ window.addEventListener("load", _ => {
                 current[0]++;
             }
         }
+        stat.innerText = `Opened ${current[0]} / ${current[1].length} tabs (${current[0] / current[1].length}% complete)`;
     });
 });
