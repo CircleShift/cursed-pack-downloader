@@ -53,7 +53,7 @@ window.addEventListener("load", _ => {
                     getURLs(link_val),
                     reformFileList(JSON.parse(manifest_val).files),
                 ];
-                stat.innerText = `Loaded ${current[0].length} URLs and ${current[1].length} File IDs`;
+                stat.innerText = `Loaded ${current[1].length} URLs and ${current[2].length} File IDs`;
             });
         });
     });
